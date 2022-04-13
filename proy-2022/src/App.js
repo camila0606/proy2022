@@ -1,3 +1,4 @@
+import Main from "./components/Main/Main";
 import Cards from "./components/Cards/Cards";
 import Footer from "./components/Footer/Footer";
 
@@ -22,7 +23,7 @@ function App() {
         <section class="card-container">
           <article>
             <main>
-              <Cards></Cards>
+              <Main></Main>
             </main>
           </article>
         </section>
