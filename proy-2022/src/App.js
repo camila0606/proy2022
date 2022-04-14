@@ -10,7 +10,6 @@ function App() {
         <Header></Header>
       </header>
       <main>
-        <button type="button">Cargar más tarjetas</button>
         <section class="card-container">
           <article>
             <main>

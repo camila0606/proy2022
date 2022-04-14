@@ -1,9 +1,10 @@
 import React from "react";
 import Finder from "../Finder/Finder";
+import './Header.css'
 
 function Header() {
   return (
-    <div>
+    <div className="header">
       <h1>CineYa</h1>
       <section>
         <i class="fas fa-th"></i>

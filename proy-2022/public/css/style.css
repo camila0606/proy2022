@@ -1,16 +1,13 @@
-.card {
-  width: 24%;
-}
-
 .container-m {
   margin: 10px;
 }
 
 .container-movies {
-  gap: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.card-movies {
-  display: flex;
-  width: 24%;
+h3 {
+  color: black;
+  font-weight: 500;
 }
