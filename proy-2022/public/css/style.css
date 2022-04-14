@@ -1,0 +1,16 @@
+.card {
+  width: 24%;
+}
+
+.container-m {
+  margin: 10px;
+}
+
+.container-movies {
+  gap: 10px;
+}
+
+.card-movies {
+  display: flex;
+  width: 24%;
+}

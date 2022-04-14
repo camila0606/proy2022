@@ -27,13 +27,15 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.movies.map((movie, idx) => (
-          <Cards
-            key={movie.original_title + movie.id}
-            dataMovie={movie}
-          ></Cards>
-        ))}
+      <div className="container-m">
+        <div className="row container-movies">
+          {this.state.movies.map((movie, idx) => (
+            <Cards
+              key={movie.original_title + movie.id}
+              dataMovie={movie}
+            ></Cards>
+          ))}
+        </div>
       </div>
     );
   }

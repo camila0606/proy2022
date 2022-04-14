@@ -8,7 +8,7 @@ export default class Cards extends Component {
 
   render() {
     return (
-      <div>
+      <div className="card card-movies mb-4">
         <img
           src={`https://image.tmdb.org/t/p/w500/${this.props.dataMovie.poster_path}`}
           alt=""

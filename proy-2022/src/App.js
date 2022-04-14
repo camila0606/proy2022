@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="content-wrapper">
       <header>
         <h1>Título/ Nombre de la app</h1>
         <section>
@@ -23,7 +23,9 @@ function App() {
         <section class="card-container">
           <article>
             <main>
-              <Main></Main>
+              <div className="container-fluid">
+                <Main></Main>
+              </div>
             </main>
           </article>
         </section>
