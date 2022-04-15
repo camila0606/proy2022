@@ -1,0 +1,8 @@
+.footer {
+    margin-top: 15px;
+    border-top: 1px solid black;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    color: black
+}

@@ -1,3 +1,22 @@
 .moreCardsBtn {
     border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+.container-movies {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.searchForm {
+    margin-bottom: 15px;
+}
+
+.inputSearch {
+    width: 500px;
+    border-radius: 20px;
+    height: 30px;
+    padding: 0px 15px;
 }

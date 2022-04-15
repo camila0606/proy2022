@@ -5,7 +5,7 @@
     padding: 10px;
     border: 2px solid gray;
     border-radius: 20px;
-    height: fit-content;
+    /* height: fit-content; */
 }
 
 .card-img {
@@ -13,7 +13,19 @@
     margin-bottom: 10px;
 }
 
+.card-name {
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.description {
+    color: gray;
+    font-size: small;
+}
+
 .btnsDiv {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
 }

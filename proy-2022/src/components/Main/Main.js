@@ -10,12 +10,11 @@ export default class Main extends Component {
       moviesBackUp: [],
       movies: [],
       moviesToRender: [],
-      textToSearch: "",
     };
   }
 
   componentDidMount() {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 50; i++) {
       fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bdc01d41b64d4396399e9ee70b4980b&language=en-US&page=`+i)
       .then((result) => result.json())
         .then((results) => {
@@ -24,15 +23,15 @@ export default class Main extends Component {
             moviesBackUp: moviesBackUpArray,
           });
           console.log("ESTAS SON LAS MOVIES", this.state.moviesBackUp)
-        })
-        .catch((error) => console.log(error));
 
-        if (i = 1) {
-          this.setState({
-            moviesToRender: this.state.moviesBackUp.slice(0,this.state.moviesToRenderNumber),
-          });
-          console.log("ESTAS MOVIES SE VAN A RENDERIZAR", this.state.moviesToRender)
-        }
+          if (i = 1) {
+            this.setState({
+              moviesToRender: this.state.moviesBackUp.slice(0,this.state.moviesToRenderNumber),
+            });
+            console.log("ESTAS MOVIES SE VAN A RENDERIZAR", this.state.moviesToRender)
+          }
+          })
+        .catch((error) => console.log(error));
     }
   }
 
@@ -48,6 +47,7 @@ export default class Main extends Component {
       this.setState(
           {
             moviesToRender: this.state.moviesBackUp.slice(0,10),
+            moviesToRenderNumber: 10,
           }
       )
   }
@@ -66,30 +66,42 @@ export default class Main extends Component {
     event.preventDefault();
   }
 
-  // search(textToSearch) {
-  //   let moviesSearched = this.state.moviesBackUp.filter((item) => item.name = true)
-  //   let moviesToRender = moviesSearched.splice(0,this.state.moviesToRenderNumber)
-  //   this.setState({
-  //     moviesToRender: moviesToRender,
-  //   })
-  // }
+  search(textToSearch) {
+    console.log("LLEGA LA FUNCION", textToSearch.target.value);
+    this.setState({
+      moviesToRender: this.state.moviesBackUp.filter((item) => item.original_title.toLowerCase().includes(textToSearch.target.value.toLowerCase())  == true),
+    })
+  }
 
   render() {
     return (
       <>
-        <form onSubmit={(event) => this.preventSubmit(event)}>
-          <input type="text" onChange={(event) => this.search(event)} value={this.setState.textToSearch}></input>
-        </form>
-        <div className="container-m">
-          <div className="row container-movies">
-            {this.state.moviesToRender.map((movie) => (
-              <Cards key={movie.original_title + movie.id} dataMovie={movie} delete={(itemToDeleteId) => this.delete(itemToDeleteId)} moreCards={(num) => this.moreCards(num)}></Cards>
-            ))}
-          </div>
-        </div>
-        <div>
-          <button className="moreCardsBtn" onClick={() => this.moreCards()}>Cargar más tarjetas</button>          
-        </div>
+      
+      <section class="card-container">
+          <article>
+            <main>
+              <div className="container-fluid">
+                
+                <form onSubmit={(event) => this.preventSubmit(event)} className="searchForm">
+                  <input type="text" onChange={(event) => this.search(event)} value={this.state.textToSearch} placeholder="Buscar..." className="inputSearch"></input>
+                </form>
+
+                <div className="row container-movies">
+                  {this.state.moviesBackUp.length > 0 ? this.state.moviesToRender.length > 0 ? this.state.moviesToRender.map((movie) => (
+                    <Cards key={movie.original_title + movie.id} dataMovie={movie} delete={(itemToDeleteId) => this.delete(itemToDeleteId)} moreCards={(num) => this.moreCards(num)}></Cards>
+                  )) : <p>No hay datos que coincidan con su búsqueda</p> : <p>Cargando...</p>}
+                </div>
+                    
+                <div className="btnsDiv">
+                  <button className="moreCardsBtn" onClick={() => this.moreCards()}>Cargar más tarjetas</button>          
+                  <button className="moreCardsBtn" onClick={() => this.reset()}>Resetar tarjetas</button>          
+                </div>
+
+              </div>
+            </main>
+          </article>
+        </section>
+        
       </>
     );
   }

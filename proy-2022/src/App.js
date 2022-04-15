@@ -10,17 +10,8 @@ function App() {
         <Header></Header>
       </header>
       <main>
-        <section class="card-container">
-          <article>
-            <main>
-              <div className="container-fluid">
-                <Main></Main>
-              </div>
-            </main>
-          </article>
-        </section>
+        <Main></Main>
       </main>
-
       <Footer />
     </div>
   );

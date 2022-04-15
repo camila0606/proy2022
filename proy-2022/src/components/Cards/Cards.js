@@ -6,6 +6,8 @@ export default class Cards extends Component {
     super(props);
     this.state = {
       viewMore: false,
+      originalDesc: this.props.dataMovie.overview,
+      shortDesc: this.props.dataMovie.overview.slice(0,100)
     };
   }
 
@@ -31,12 +33,17 @@ export default class Cards extends Component {
           className="card-img"
         />
         <h3 className="card-name">{this.props.dataMovie.original_title}</h3>
-        <p class="description">{this.props.dataMovie.overview}</p>
-        {this.state.viewMore == true ? <section class="aditional-info" >
+          
+        {
+        this.state.viewMore == true ? 
+        <section class="aditional-info" >
+          <p class="description">{this.state.originalDesc}</p>
           <p>Release Date: {this.props.dataMovie.release_date}</p>
           <p>Vote Count: {this.props.dataMovie.vote_count}</p>
           <p>Vote Average: {this.props.dataMovie.vote_average}</p>
-        </section> : ""}
+        </section> : 
+        <p class="description">{this.state.shortDesc}...</p>
+        }
         <div className="btnsDiv">
           <p className="showMoreBtn" onClick={() => this.showMore()}>{this.state.viewMore == true ? "Ver menos" : "Ver más"}</p>
           <p onClick={() => this.props.delete(this.props.dataMovie.id)} className="deleteBtn">Borrar</p>
