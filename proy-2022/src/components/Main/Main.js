@@ -15,8 +15,7 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 5; i++) {
       fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bdc01d41b64d4396399e9ee70b4980b&language=en-US&page=`+i)
       .then((result) => result.json())
         .then((results) => {
@@ -67,13 +66,13 @@ export default class Main extends Component {
     event.preventDefault();
   }
 
-  search(textToSearch) {
-    let moviesSearched = this.state.moviesBackUp.filter((item) => item.name = true)
-    let moviesToRender = moviesSearched.splice(0,this.state.moviesToRenderNumber)
-    this.setState({
-      moviesToRender: moviesToRender,
-    })
-  }
+  // search(textToSearch) {
+  //   let moviesSearched = this.state.moviesBackUp.filter((item) => item.name = true)
+  //   let moviesToRender = moviesSearched.splice(0,this.state.moviesToRenderNumber)
+  //   this.setState({
+  //     moviesToRender: moviesToRender,
+  //   })
+  // }
 
   render() {
     return (
