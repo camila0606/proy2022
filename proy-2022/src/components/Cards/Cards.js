@@ -42,7 +42,7 @@ export default class Cards extends Component {
           <p>Vote Count: {this.props.dataMovie.vote_count}</p>
           <p>Vote Average: {this.props.dataMovie.vote_average}</p>
         </section> : 
-        <p class="description">{this.state.shortDesc}...</p>
+        <p class="description">{this.state.shortDesc}{this.state.originalDesc.length > 100 ? "..." : ""}</p>
         }
         <div className="btnsDiv">
           <p className="showMoreBtn" onClick={() => this.showMore()}>{this.state.viewMore == true ? "Ver menos" : "Ver más"}</p>

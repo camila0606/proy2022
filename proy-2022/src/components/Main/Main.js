@@ -68,8 +68,9 @@ export default class Main extends Component {
 
   search(textToSearch) {
     console.log("LLEGA LA FUNCION", textToSearch.target.value);
+    let newMoviesToRender = this.state.moviesBackUp.filter((item) => item.original_title.toLowerCase().includes(textToSearch.target.value.toLowerCase())  == true)
     this.setState({
-      moviesToRender: this.state.moviesBackUp.filter((item) => item.original_title.toLowerCase().includes(textToSearch.target.value.toLowerCase())  == true),
+      moviesToRender: newMoviesToRender.slice(0,this.state.moviesToRenderNumber),
     })
   }
 
