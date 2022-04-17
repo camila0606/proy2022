@@ -6,6 +6,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      orientacion: false,
       moviesToRenderNumber: 10,
       moviesBackUp: [],
       movies: [],
@@ -24,7 +25,7 @@ export default class Main extends Component {
           });
           console.log("ESTAS SON LAS MOVIES", this.state.moviesBackUp)
 
-          if (i = 1) {
+          if (i === 1) {
             this.setState({
               moviesToRender: this.state.moviesBackUp.slice(0,this.state.moviesToRenderNumber),
             });
@@ -38,7 +39,7 @@ export default class Main extends Component {
   delete(itemToDeleteId) {
     this.setState(
         {
-          moviesToRender: this.state.moviesToRender.filter((item) => item.id != itemToDeleteId)
+          moviesToRender: this.state.moviesToRender.filter((item) => item.id !== itemToDeleteId)
         }
     )
   }
@@ -65,10 +66,20 @@ export default class Main extends Component {
   preventSubmit(event) {
     event.preventDefault();
   }
+  vertical(){
+    this.setState({
+        orientacion: false
+    })
+}
+horizontal(){
+    this.setState({
+        orientacion: true
+    })
+}
 
   search(textToSearch) {
     console.log("LLEGA LA FUNCION", textToSearch.target.value);
-    let newMoviesToRender = this.state.moviesBackUp.filter((item) => item.original_title.toLowerCase().includes(textToSearch.target.value.toLowerCase())  == true)
+    let newMoviesToRender = this.state.moviesBackUp.filter((item) => item.original_title.toLowerCase().includes(textToSearch.target.value.toLowerCase())  === true)
     this.setState({
       moviesToRender: newMoviesToRender.slice(0,this.state.moviesToRenderNumber),
     })
