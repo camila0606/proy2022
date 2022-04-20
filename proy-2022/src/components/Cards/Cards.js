@@ -34,14 +34,14 @@ export default class Cards extends Component {
         <h3 className="card-name">{this.props.dataMovie.original_title}</h3>
 
         {this.state.viewMore === true ? (
-          <section class="aditional-info">
-            <p class="description">{this.state.originalDesc}</p>
+          <section className="aditional-info">
+            <p className="description">{this.state.originalDesc}</p>
             <p>Release Date: {this.props.dataMovie.release_date}</p>
             <p>Vote Count: {this.props.dataMovie.vote_count}</p>
             <p>Vote Average: {this.props.dataMovie.vote_average}</p>
           </section>
         ) : (
-          <p class="description">
+          <p className="description">
             {this.state.shortDesc}
             {this.state.originalDesc.length > 100 ? "..." : ""}
           </p>
@@ -49,16 +49,16 @@ export default class Cards extends Component {
         <div className="btnsDiv">
           <p className="showMoreBtn" onClick={() => this.showMore()}>
             {this.state.viewMore === true ? (
-              <i class="fa fa-minus" aria-hidden="true"></i>
+              <i className="fa fa-minus" aria-hidden="true"></i>
             ) : (
-              <i class="fa fa-plus" aria-hidden="true"></i>
+              <i className="fa fa-plus" aria-hidden="true"></i>
             )}
           </p>
           <p
             onClick={() => this.props.delete(this.props.dataMovie.id)}
             className="deleteBtn"
           >
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i className="fa fa-trash" aria-hidden="true"></i>
           </p>
         </div>
       </div>
