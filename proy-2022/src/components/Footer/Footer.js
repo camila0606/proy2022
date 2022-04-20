@@ -10,8 +10,8 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <p>Ian Jamui</p>
-        <p>Cami</p>
-        <p>Pedro</p>
+        <p>Camila Escontrela</p>
+        <p>Pedro Pla</p>
       </footer>
     );
   }

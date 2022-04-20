@@ -4,5 +4,6 @@
     padding: 30px;
     display: flex;
     justify-content: space-around;
-    color: black
+    color: black;
+    background-color: beige;
 }

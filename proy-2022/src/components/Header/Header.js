@@ -6,6 +6,7 @@ function Header() {
     <div className="header">
       <h1>CineYa</h1>
     </div>
+    
   );
 }
 
