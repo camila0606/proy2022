@@ -1,16 +1,40 @@
 .card-movies {
-    width: 24%;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border: 2px solid gray;
+    margin: 10px;
+    /* border: 2px solid black; */
     border-radius: 20px;
-    /* height: fit-content; */
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid lightgray;
+}
+
+.card-movies-col {
+    width: 300px;
+    display: flex;
+    width: 100%;
+    min-height: 250px;
+    margin: 10px;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border: 1px solid lightgray;
 }
 
 .card-img {
     border-radius: 20px;
-    margin-bottom: 10px;
+    max-width: 298px;
+}
+
+.card-img-col {
+    border-radius: 20px;
+    max-width: 149px;
+    max-height: 250px;
+}
+
+.card-info {
+    padding: 20px;
+    padding-bottom: 10px;
 }
 
 .card-name {
@@ -27,7 +51,7 @@
 .btnsDiv {
     margin-top: auto;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .showMoreBtn {
@@ -35,6 +59,7 @@
     padding: 2px 5px;
     border: 1px solid blue;
     border-radius: 20px;
+    margin-right: 10px;
 }
 
 .showMoreBtn:hover {
@@ -46,6 +71,7 @@
     padding: 2px 5px;
     border: 1px solid red;
     border-radius: 20px;
+    /* margin: 5px; */
 }
 
 .deleteBtn:hover {

@@ -6,7 +6,7 @@
     
     background-color: lightblue;
 
-    height: 200px;
+    min-height: 200px;
     width: 100%;
 
     display: flex;
@@ -17,17 +17,23 @@
     padding: 20px;
 }
 
+.searchForm {
+    width: 80%;
+}
+
 .banner-title {
     font-size: 50px;
     color: black;
     font-weight: 800;
     text-decoration: black;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .inputSearch {
-  width: 800px;
-  border-radius: 20px;
-  height: 50px;
-  padding: 0px 15px;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid black;
+    height: 50px;
+    padding: 0px 15px;
 }

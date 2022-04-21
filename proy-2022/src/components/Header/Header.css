@@ -1,7 +1,12 @@
 .header {
     padding: 15px 24px;
     display: flex;
+    justify-content: space-between;
     background-color: rgb(3,37,65);
+}
+
+.logo{
+    display: flex;
 }
 
 .header-img {
@@ -11,5 +16,13 @@
 
 .header-title {
     font-size: 36px;
+    font-weight: 800;
     color: white;
+}
+
+.fetchLbl {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-right: 10px;
 }
