@@ -1,5 +1,15 @@
 .header {
-    padding: 24px;
+    padding: 15px 24px;
     display: flex;
-    background-color: black;
+    background-color: rgb(3,37,65);
+}
+
+.header-img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.header-title {
+    font-size: 36px;
+    color: white;
 }

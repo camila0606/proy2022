@@ -51,3 +51,11 @@
 .deleteBtn:hover {
     background-color: pink;
 }
+
+.black {
+    background-color: black;
+}
+
+.green {
+    background-color: green;
+}

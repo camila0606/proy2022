@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Main.css";
 import Cards from "../Cards/Cards";
+import Finder from "../finder/Finder";
 
 export default class Main extends Component {
   constructor(props) {
@@ -114,27 +115,17 @@ export default class Main extends Component {
   render() {
     return (
       <>
+        <Finder finder={(event) => this.search(event)}></Finder>
+        <div className="orientation">
+          <button onClick={() => this.orinet()} type="button">
+            {this.state.orient}
+          </button>
+        </div>
         <section class="card-container">
           <article>
             <main>
               <div className="container-fluid">
-                <form
-                  onSubmit={(event) => this.preventSubmit(event)}
-                  className="searchForm"
-                >
-                  <input
-                    type="text"
-                    onChange={(event) => this.search(event)}
-                    value={this.state.textToSearch}
-                    placeholder="Buscar..."
-                    className="inputSearch"
-                  ></input>
-                </form>
-                <div className="orientation">
-                  <button onClick={() => this.orinet()} type="button">
-                    {this.state.orient}
-                  </button>
-                </div>
+                
                 <div className={this.state.orientClassName}>
                   {this.state.moviesBackUp.length > 0 ? (
                     this.state.moviesToRender.length > 0 ? (
@@ -142,9 +133,7 @@ export default class Main extends Component {
                         <Cards
                           key={movie.original_title + movie.id}
                           dataMovie={movie}
-                          delete={(itemToDeleteId) =>
-                            this.delete(itemToDeleteId)
-                          }
+                          delete={(itemToDeleteId) => this.delete(itemToDeleteId)}
                           moreCards={(num) => this.moreCards(num)}
                         ></Cards>
                       ))

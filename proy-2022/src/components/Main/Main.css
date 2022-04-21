@@ -1,5 +1,5 @@
 .content-wrapper {
-background-color: bisque;
+background-color: white;
 
 }
 .moreCardsBtn {
@@ -11,7 +11,6 @@ background-color: bisque;
 }
 
 .container-movies {
-  background-color: black;
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -24,21 +23,8 @@ background-color: bisque;
   flex-direction: column;
 }
 
-.searchForm {
-  margin-bottom: 15px;
-  margin-top: 15px;
-  
-}
-
-.inputSearch {
-  width: 400px;
-  border-radius: 20px;
-  height: 30px;
-  padding: 0px 15px;
-}
-
 .orientation button {
-  margin-left: 1350px;
+  margin-left: 135px;
   border-radius: 20px;
   color: black;
   background-color: rgb(214, 203, 203);

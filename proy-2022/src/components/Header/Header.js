@@ -4,7 +4,8 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header">
-      <h1>CineYa</h1>
+      <img src="img/movieYa-logo.png" className="header-img"/>
+      <h1 className="header-title">Cine Ya!</h1>
     </div>
     
   );
