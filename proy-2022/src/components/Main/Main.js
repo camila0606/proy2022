@@ -116,10 +116,7 @@ export default class Main extends Component {
 
   search(textToSearch) {
     console.log("LLEGA LA FUNCION", textToSearch.target.value);
-    let newMoviesToRender = this.state.moviesBackUp.filter(
-      (item) =>
-        item.title.toLowerCase().includes(textToSearch.target.value.toLowerCase()) === true
-    );
+    let newMoviesToRender = this.state.moviesBackUp.filter( (item) => item.title.toLowerCase().includes(textToSearch.target.value.toLowerCase()) );
     this.setState({
       moviesToRender: newMoviesToRender.slice(
         0,
@@ -131,13 +128,13 @@ export default class Main extends Component {
   orient() {
     if (this.state.orientation == "row") {
       this.setState({
-        orient: <i class="fas fa-solid fa-border-all"></i>,
+        orient: <i className="fas fa-solid fa-border-all"></i>,
         orientation: "col",
         orientClassName: "container-movies-2",
       });
     } else {
       this.setState({
-        orient: <i className="fas fa-solid fa-bars"> </i>,
+        orient: <i className="fas fa-solid fa-bars"></i>,
         orientation: "row",
         orientClassName: "row container-movies",
       });

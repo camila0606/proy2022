@@ -11,7 +11,7 @@ export default class Cards extends Component {
     };
   }
 
-  showMore() {
+  showMore(num) {
     if (this.state.viewMore === false) {
       this.setState({
         viewMore: true,

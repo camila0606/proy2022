@@ -13,7 +13,6 @@ class App extends Component {
 
   onChangeFetch(event) {
     this.setState({fetch: event.target.value});
-    console.log("ESTAS PELICULAS SE TRAEN",event.target.value);
   }
 
 
